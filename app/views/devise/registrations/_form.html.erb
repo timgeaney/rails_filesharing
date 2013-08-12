@@ -10,13 +10,6 @@
 <div><%= f.label :username, 'Username' %>
 <%= f.text_field :username %></div>
 
-<div class="options">
-  <%= f.radio_button :gender, 'male' %>
-  <%= f.label :gender_male, 'Male' %>
-  <%= f.radio_button :gender, 'Female' %>
-  <%= f.label :gender_female, 'Female' %>
-</div>
-
 <div><%= f.label :avatar %>
 <%= f.file_field :avatar %>
 current profile pic: <%= image_tag @user.avatar.url(:mini)%></div>
