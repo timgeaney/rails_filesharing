@@ -1,0 +1,28 @@
+<div><%= f.label :email %>
+<%= f.text_field :email %></div>
+
+<div><%= f.label :firstname %>
+<%= f.text_field :firstname %></div>
+
+<div><%= f.label :lastname %>
+<%= f.text_field :lastname %></div>
+
+<div><%= f.label :username, 'Username' %>
+<%= f.text_field :username %></div>
+
+<div class="options">
+  <%= f.radio_button :gender, 'male' %>
+  <%= f.label :gender_male, 'Male' %>
+  <%= f.radio_button :gender, 'Female' %>
+  <%= f.label :gender_female, 'Female' %>
+</div>
+
+<div><%= f.label :avatar %>
+<%= f.file_field :avatar %>
+current profile pic: <%= image_tag @user.avatar.url(:mini)%></div>
+
+<div><%= f.label :password %>
+<%= f.password_field :password %></div>
+
+<div><%= f.label :password_confirmation, 'Confirmation' %>
+<%= f.password_field :password_confirmation %></div>
