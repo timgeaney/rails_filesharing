@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
 
   attr_accessible :role_ids, :as => :admin       
   
-  attr_accessible :avatar, 
+  attr_accessible :avatar,
+                  :user_id, 
                   :firstname,
                   :lastname, 
                   :username,
@@ -24,7 +25,10 @@ class User < ActiveRecord::Base
                   :remember_me
   
   has_attached_file :avatar, { :styles => {:medium => "300 x 240", :thumb => "112x112#", :mini => '44x44#'}, :default_url => "/images/:style/missing.png" }
+  has_attached_file :uploaded_file
 
+  validates_attachment_size :uploaded_file, :less_than => 10.megabytes  
+  validates_attachment_presence :uploaded_file
   validates_presence_of :email
   validates_uniqueness_of :email, :case_sensitive => false
 
