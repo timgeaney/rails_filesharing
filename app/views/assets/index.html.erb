@@ -1,13 +1,14 @@
 
 <h3>Assets Index</h3>
 <ul class="assets">
+  User id: <%= current_user.id %>
   <% @assets.each do |asset| %>
     <li>
       <%= link_to asset.file_name, asset %>
       Time created: <%= asset. created_at.to_date %>
       <%= link_to "Show", asset %>
       <%= link_to "Edit", edit_asset_path(asset) %>
-      <%= link_to "Destroy", asset, :confirm => 'Are You Sure', :method => :destroy %>
+      <%= link_to "Delete", asset, method: :delete, data: { confirm: "Are you sure?"}, title: asset.file_name %>
 
 
 

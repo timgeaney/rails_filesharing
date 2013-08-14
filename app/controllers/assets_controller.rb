@@ -37,6 +37,9 @@ class AssetsController < ApplicationController
   end
 
   def destroy
-    @assets = current_user.assets.find([params[:id]])
+    #authorize! :destroy, @user, :message => 'Not authorized as an Admin'
+      Asset.find([params[:id]]).destroy
+      flash[:sucess] = "Asset Destroyed"
+      redirect_to root_url
   end 
 end

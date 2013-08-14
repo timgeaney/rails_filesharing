@@ -22,5 +22,11 @@
     <li>
     <%= link_to('Sign up', new_user_registration_path)  %>
     </li>
+
+    <li>
+      <% if user_signed_in? %>
+        <%= link_to 'Upload File', new_asset_path %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
