@@ -5,7 +5,7 @@
   <% @assets.each do |asset| %>
     <li>
       <%= link_to asset.file_name, asset %>
-      Time created: <%= asset. created_at.to_date %>
+      Time created: <%= asset. created_at.to_datetime %>
       <%= link_to "Show", asset %>
       <%= link_to "Edit", edit_asset_path(asset) %>
       <%= link_to "Delete", asset, method: :delete, data: { confirm: "Are you sure?"}, title: asset.file_name %>
